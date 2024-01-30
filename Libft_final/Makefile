@@ -40,7 +40,12 @@ MY_SOURCES = ft_atoi.c \
 BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
 		ft_lstsize.c \
-		ft_lstlast.c
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
 PRINTF = ./Printf/ft_printf.c \
 		 ./Printf/ft_print_chars.c \
@@ -50,7 +55,7 @@ PRINTF = ./Printf/ft_printf.c \
 GNL = ./GetNextLine/get_next_line.c \
 	  ./GetNextLine/get_next_line_utils.c
 
-MY_OBJECTS = $(MY_SOURCES:.c=.o) $(PRINTF:.c=.o) $(GNL:.c=.o)
+MY_OBJECTS = $(MY_SOURCES:.c=.o) $(BONUS:.c=.o) $(PRINTF:.c=.o) $(GNL:.c=.o)
 #BONUS_OBJS	= ${BONUS:.c=.o}
 
 CC = gcc
@@ -67,6 +72,7 @@ $(NAME): $(MY_OBJECTS) $(INCLUDE)
 
 clean:
 	rm -f $(MY_OBJECTS)
+#						$(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(NAME)
